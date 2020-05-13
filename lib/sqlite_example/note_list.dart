@@ -34,16 +34,24 @@ class _NoteListState extends State<NoteList> {
               child: ListTile(
                 leading: CircleAvatar(backgroundColor:getProrityColor(noteList[index].priority),child:getPriorityIcon(noteList[index].priority) ),
                 title: Text(noteList[index].title),
-                subtitle: Text(noteList[index].description,style: textStyle,),
+                subtitle: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    
+                  // Text(noteList[index].description,style: textStyle,),
+                    Text(noteList[index].date)
+                  ],
+                ),
                 trailing: IconButton(
                   icon: Icon(Icons.delete), 
                   onPressed: ()async{
                    await dataBaseHelper.deleteNote(noteList[index].id).then((res){
                      updateListView();
-                    //  setState(() {
-                    //    final snackBar=SnackBar(content: Text('data'));
-                    //  Scaffold.of(context).showSnackBar(snackBar);
-                    //  });
+                     
+                       final snackBar=SnackBar(content: Text('deleted successfully'));
+                     Scaffold.of(ctx).showSnackBar(snackBar);
+                     
                    });
                   }
                 ),
