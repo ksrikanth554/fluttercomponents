@@ -5,6 +5,7 @@ import 'package:fluttercomponents/animations/loginpage_animation.dart';
 import 'package:fluttercomponents/providers/counterui.dart';
 import 'package:fluttercomponents/providers/getcountproviders.dart';
 import 'package:fluttercomponents/sfsimplechart.dart';
+import 'package:fluttercomponents/whatsappclone.dart';
 import 'package:provider/provider.dart';
 //import 'package:syncfusion_flutter_core/core.dart';
 
@@ -28,6 +29,9 @@ class Home extends StatelessWidget {
         ),
       ],
           child: MaterialApp(
+            theme: ThemeData(
+              primaryColor: Color(0xff075E54)
+            ),
         home: FirstPage(),
         debugShowCheckedModeBanner: false,
       ),
@@ -69,6 +73,9 @@ class FirstPage extends StatelessWidget {
           RaisedButton(
             child: Text('Sq Lite Example'),
             onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>NoteList()))),
+          RaisedButton(
+            child: Text('Whats App Clone'),
+            onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>WhatsAppHome()))),
         ],
       )
     );
