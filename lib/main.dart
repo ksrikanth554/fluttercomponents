@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttercomponents/animated_List.dart';
 import 'package:fluttercomponents/animations/loginpage_animation.dart';
+import 'package:fluttercomponents/sidebars/multilevel_sidebar.dart';
+import './sidebars/foldedsidebar.dart';
 import 'package:fluttercomponents/providers/counterui.dart';
 import 'package:fluttercomponents/providers/getcountproviders.dart';
 import 'package:fluttercomponents/sfsimplechart.dart';
@@ -76,6 +78,12 @@ class FirstPage extends StatelessWidget {
           RaisedButton(
             child: Text('Whats App Clone'),
             onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>WhatsAppHome()))),
+          RaisedButton(
+            child: Text('Folded SideBar'),
+            onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>FoldedSideBar()))),
+          RaisedButton(
+            child: Text('Multi Level SideBar'),
+            onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>MultiLevelSideBar()))),
         ],
       )
     );

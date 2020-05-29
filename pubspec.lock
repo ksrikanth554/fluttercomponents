@@ -79,6 +79,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  foldable_sidebar:
+    dependency: "direct main"
+    description:
+      name: foldable_sidebar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   image:
     dependency: transitive
     description:
@@ -114,6 +121,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.8"
+  multilevel_drawer:
+    dependency: "direct main"
+    description:
+      name: multilevel_drawer
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.3"
   nested:
     dependency: transitive
     description:
@@ -238,6 +252,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+  swipedetector:
+    dependency: "direct main"
+    description:
+      name: swipedetector
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0"
   syncfusion_flutter_charts:
     dependency: "direct main"
     description:
