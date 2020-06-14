@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttercomponents/animated_List.dart';
 import 'package:fluttercomponents/animations/loginpage_animation.dart';
+import 'package:fluttercomponents/itemstack_listview.dart';
 import 'package:fluttercomponents/sidebars/multilevel_sidebar.dart';
 import './sidebars/foldedsidebar.dart';
 import 'package:fluttercomponents/providers/counterui.dart';
@@ -14,6 +15,7 @@ import 'package:provider/provider.dart';
 import 'animations/delayed_animation.dart';
 import 'animations/parenting_animation.dart';
 import 'animations/transfroming_animation.dart';
+import 'google_maps_example/googe_map_example.dart';
 import 'multorow/tabpage.dart';
 import 'sqlite_example/note_list.dart';
 
@@ -84,6 +86,12 @@ class FirstPage extends StatelessWidget {
           RaisedButton(
             child: Text('Multi Level SideBar'),
             onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>MultiLevelSideBar()))),
+          RaisedButton(
+            child: Text('Item Stack ListView'),
+            onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>ItemStackListView()))),
+          RaisedButton(
+            child: Text('Google Map Example'),
+            onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>GoogleMapExample()))),
         ],
       )
     );
