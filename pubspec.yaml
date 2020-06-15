@@ -33,6 +33,7 @@ dependencies:
   multilevel_drawer: ^1.0.3
   google_maps_flutter: 
   font_awesome_flutter: ^8.8.1
+  http: ^0.12.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

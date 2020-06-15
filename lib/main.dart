@@ -1,9 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttercomponents/animated_List.dart';
 import 'package:fluttercomponents/animations/loginpage_animation.dart';
+import 'package:fluttercomponents/dictionaryapp/dictionary.dart';
 import 'package:fluttercomponents/itemstack_listview.dart';
 import 'package:fluttercomponents/sidebars/multilevel_sidebar.dart';
+import 'package:http/http.dart';
 import './sidebars/foldedsidebar.dart';
 import 'package:fluttercomponents/providers/counterui.dart';
 import 'package:fluttercomponents/providers/getcountproviders.dart';
@@ -43,6 +47,7 @@ class Home extends StatelessWidget {
   }
 }
 class FirstPage extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -92,6 +97,10 @@ class FirstPage extends StatelessWidget {
           RaisedButton(
             child: Text('Google Map Example'),
             onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>GoogleMapExample()))),
+          RaisedButton(
+            child: Text('Dictionary App'),
+            onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>DictionaryApp()))
+            ),
         ],
       )
     );
