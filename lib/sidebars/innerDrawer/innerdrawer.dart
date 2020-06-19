@@ -35,11 +35,13 @@ class DrawerContent extends StatefulWidget{
 class _DrawerContentState extends State<DrawerContent> {
 var textData='hello';
   var view=ViewType.Noraml;
+  var _innerDrawer=GlobalKey<InnerDrawerState>();
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return InnerDrawer(
-      scale: IDOffset.only(left: 0.9,right: 0.9,),
+      key: _innerDrawer,
+      scale: IDOffset.horizontal(0.9),
       borderRadius: 20.0,
       rightAnimationType: InnerDrawerAnimation.quadratic,
       backgroundDecoration: BoxDecoration(
@@ -47,7 +49,17 @@ var textData='hello';
         
         
       ),
-      scaffold: conditioanlView(view),
+      scaffold: Scaffold(
+        
+        appBar: AppBar(
+          title:Text('inner'),
+          leading: IconButton(icon: Icon(Icons.menu), onPressed: (){
+              _innerDrawer.currentState.open(direction: InnerDrawerDirection.start);
+          }),
+        ),
+        
+        body: conditionlView(view)
+      ),
       // scaffold: Container(
       //   color: Colors.white,
       //   child: Center(
@@ -59,7 +71,7 @@ var textData='hello';
       onTapClose: true,
       );
   }
-        Widget conditioanlView(var view){
+        Widget conditionlView(var view){
           Widget widget;
             if (view==ViewType.Noraml) {
                 widget= Container(
