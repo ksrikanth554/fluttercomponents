@@ -60,12 +60,7 @@ var textData='hello';
         
         body: conditionlView(view)
       ),
-      // scaffold: Container(
-      //   color: Colors.white,
-      //   child: Center(
-      //     child: Text(textData),
-      //   ),
-      // ),
+      
       leftChild: innerDrawerContent(context),
       rightChild: innerDrawerContent(context),
       onTapClose: true,
