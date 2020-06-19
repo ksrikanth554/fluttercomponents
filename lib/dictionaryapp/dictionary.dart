@@ -69,12 +69,22 @@ class _DictionaryAppState extends State<DictionaryApp> {
                               border: InputBorder.none
                             ),
                             onChanged: (val){
-                              if (_timer?.isActive==true) {
+                              if (val==null||val=='') {
+                                 _streamController.add(null);
+                                
                                 _timer.cancel();
+                                
                               }
-                              _timer=Timer(Duration(milliseconds: 1000), (){
-                                _search();
-                              });
+                              else{
+                                if (_timer?.isActive==true) {
+                                _timer.cancel();
+                                }
+                                _timer=Timer(Duration(milliseconds: 1000), (){
+                                  _search();
+                                });
+                                
+                              }
+                              
                             },
                           ),
                         ),

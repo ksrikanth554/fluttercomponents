@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttercomponents/animated_List.dart';
 import 'package:fluttercomponents/animations/loginpage_animation.dart';
+import 'package:fluttercomponents/appbars/sliverappbar.dart';
 import 'package:fluttercomponents/dictionaryapp/dictionary.dart';
 import 'package:fluttercomponents/itemstack_listview.dart';
 import 'package:fluttercomponents/sidebars/multilevel_sidebar.dart';
@@ -21,6 +22,7 @@ import 'animations/parenting_animation.dart';
 import 'animations/transfroming_animation.dart';
 import 'google_maps_example/googe_map_example.dart';
 import 'multorow/tabpage.dart';
+import 'sidebars/innerDrawer/innerdrawer.dart';
 import 'sqlite_example/note_list.dart';
 
 void main(){
@@ -101,6 +103,15 @@ class FirstPage extends StatelessWidget {
             child: Text('Dictionary App'),
             onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>DictionaryApp()))
             ),
+          RaisedButton(
+            child: Text('Inner Drawer'),
+            onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>InnerDrawerExample()))
+            ),
+          RaisedButton(
+            child: Text('Sliver App Bar With Custom Scrollview'),
+            onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>SliverAppBarExample()))
+            ),
+
         ],
       )
     );
