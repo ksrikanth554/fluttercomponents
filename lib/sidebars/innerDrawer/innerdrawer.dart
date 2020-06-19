@@ -22,12 +22,19 @@ class InnerDrawerExample extends StatelessWidget {
     );
   }
 }
-
-class DrawerContent extends StatelessWidget{
+enum ViewType{
+  Noraml,
+  ListType
+}
+class DrawerContent extends StatefulWidget{
   
+  @override
+  _DrawerContentState createState() => _DrawerContentState();
+}
 
-  
-
+class _DrawerContentState extends State<DrawerContent> {
+var textData='hello';
+  var view=ViewType.Noraml;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -40,50 +47,87 @@ class DrawerContent extends StatelessWidget{
         
         
       ),
-      scaffold: Container(
-        color: Colors.white,
-        child: Center(
-          child: Text('data'),
-        ),
-      ),
-      leftChild: innerDrawerContent(),
-      rightChild: innerDrawerContent(),
+      scaffold: conditioanlView(view),
+      // scaffold: Container(
+      //   color: Colors.white,
+      //   child: Center(
+      //     child: Text(textData),
+      //   ),
+      // ),
+      leftChild: innerDrawerContent(context),
+      rightChild: innerDrawerContent(context),
       onTapClose: true,
       );
   }
+        Widget conditioanlView(var view){
+          Widget widget;
+            if (view==ViewType.Noraml) {
+                widget= Container(
+                color: Colors.white,
+                child: Center(
+                  child: Text(textData),
+                ),
+              );
+            }
+            else if (view==ViewType.ListType) {
+              widget=Container(
+                color: Colors.white,
+                child: ListView(
+                  children: <Widget>[
+                    Text('data1'),
+                    Text('data1'),
+                    Text('data1'),
+                    Text('data1'),
+                  ],
+                ),
+              );
+            }
+
+          return widget;
+          
+          }
+
+  
+
+              Widget innerDrawerContent(BuildContext context){
+              return Container(
+                
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          height: 100,
+                        ),
+                        ExpansionTile(
+                          title: Text('Products'),
+                          trailing: Icon(Icons.arrow_drop_down),
+                          children: <Widget>[
+                              InkWell(child: Text('Item 1'),onTap: (){
+                                Navigator.pop(context);
+                                setState(() {
+                                  view=ViewType.ListType;
+                                });
+                              },),
+                              Text('Item 2'),
+                              Text('Item 3'),
+                              Text('Item 4')
+                          ],
+                        ),
+                        ExpansionTile(
+                          title: Text('Category'),
+                          trailing: Icon(Icons.arrow_drop_down),
+                          children: <Widget>[
+                              Text('Category 1'),
+                              Text('Category 2'),
+                              Text('Category 3'),
+                              Text('Category 4')
+                          ],
+                        ),
+                      ],
+                    ),
+                  );
+            }
 }
-Widget innerDrawerContent(){
-  return Container(
-    
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: 100,
-            ),
-            ExpansionTile(
-              title: Text('Products'),
-              trailing: Icon(Icons.arrow_drop_down),
-              children: <Widget>[
-                  Text('Item 1'),
-                  Text('Item 2'),
-                  Text('Item 3'),
-                  Text('Item 4')
-              ],
-            ),
-            ExpansionTile(
-              title: Text('Category'),
-              trailing: Icon(Icons.arrow_drop_down),
-              children: <Widget>[
-                  Text('Category 1'),
-                  Text('Category 2'),
-                  Text('Category 3'),
-                  Text('Category 4')
-              ],
-            ),
-          ],
-        ),
-      );
-}
+
 Drawer content(){
     return Drawer(
         child: Column(
