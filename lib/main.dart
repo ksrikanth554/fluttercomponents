@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
@@ -42,9 +43,30 @@ class Home extends StatelessWidget {
             theme: ThemeData(
               primaryColor: Color(0xff075E54)
             ),
-        home: FirstPage(),
+        home: SplashScreen(),
         debugShowCheckedModeBanner: false,
       ),
+    );
+  }
+}
+class SplashScreen extends StatefulWidget {
+  
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(Duration(milliseconds: 2000), ()=>Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(ctx)=>FirstPage())));
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.pink,
+      child: Center(child: Icon(Icons.home)),
     );
   }
 }
