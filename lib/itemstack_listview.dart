@@ -16,6 +16,7 @@ class _ItemStackListViewState extends State<ItemStackListView> {
       (){
         setState(() {
           topLevelScrollController=scrollController.offset>20;
+          
         });
       }
     );
@@ -31,6 +32,7 @@ class _ItemStackListViewState extends State<ItemStackListView> {
         child: Column(
           children: <Widget>[
             AnimatedContainer(
+              
               duration: Duration(milliseconds: 200),
               width: size.width,
               height:topLevelScrollController?0: size.height*0.2,

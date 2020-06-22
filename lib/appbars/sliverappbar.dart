@@ -13,8 +13,8 @@ class _SliverAppBarExampleState extends State<SliverAppBarExample> {
 
           slivers: <Widget>[
               SliverAppBar(
-                //expandedHeight: 150,
-                  floating: false,
+                expandedHeight: 150,
+                  floating: true,
                   pinned: false,
                   title: Text('Sliver app'),
               ),
