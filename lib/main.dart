@@ -9,6 +9,7 @@ import 'package:fluttercomponents/appbars/sliverappbar.dart';
 import 'package:fluttercomponents/dictionaryapp/dictionary.dart';
 import 'package:fluttercomponents/itemstack_listview.dart';
 import 'package:fluttercomponents/listviews/lazy_laoding_listview.dart';
+import 'package:fluttercomponents/razor_pay.dart';
 import 'package:fluttercomponents/sidebars/multilevel_sidebar.dart';
 import 'package:http/http.dart';
 import './sidebars/foldedsidebar.dart';
@@ -137,6 +138,10 @@ class FirstPage extends StatelessWidget {
           RaisedButton(
             child: Text('Lazy Loading Listview'),
             onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>LazyLoadingListView()))
+            ),
+          RaisedButton(
+            child: Text('RazorPay example'),
+            onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>RazorPayExample()))
             ),
 
         ],

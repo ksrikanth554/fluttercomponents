@@ -37,6 +37,8 @@ dependencies:
   equatable: ^1.2.0
   flutter_bloc: ^4.0.0
   flutter_inner_drawer: ^0.5.6+1
+  fluttertoast: ^4.0.1
+  razorpay_flutter: ^1.2.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -46,7 +48,8 @@ dev_dependencies:
 flutter_native_splash:
   image: assets/images/splash.png
   color: "#42a5f5"
-
+  fill: true
+  android: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
