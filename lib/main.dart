@@ -143,6 +143,10 @@ class FirstPage extends StatelessWidget {
             child: Text('RazorPay example'),
             onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>RazorPayExample()))
             ),
+          RaisedButton(
+              child: Text('Printing example'),
+              onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>RazorPayExample()))
+          ),
 
         ],
       )

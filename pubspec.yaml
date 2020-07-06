@@ -39,6 +39,7 @@ dependencies:
   flutter_inner_drawer: ^0.5.6+1
   fluttertoast: ^4.0.1
   razorpay_flutter: ^1.2.1
+  printing: ^3.5.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
