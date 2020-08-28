@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:convert';
+
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,8 +7,10 @@ import 'package:fluttercomponents/animated_List.dart';
 import 'package:fluttercomponents/animations/loginpage_animation.dart';
 import 'package:fluttercomponents/appbars/sliverappbar.dart';
 import 'package:fluttercomponents/dictionaryapp/dictionary.dart';
+import 'package:fluttercomponents/fingerprint/singin_page.dart';
 import 'package:fluttercomponents/itemstack_listview.dart';
 import 'package:fluttercomponents/listviews/lazy_laoding_listview.dart';
+import 'package:fluttercomponents/mysql_example/mysql_example.dart';
 import 'package:fluttercomponents/razor_pay.dart';
 import 'package:fluttercomponents/sidebars/multilevel_sidebar.dart';
 import 'package:http/http.dart';
@@ -25,6 +27,7 @@ import 'animations/parenting_animation.dart';
 import 'animations/transfroming_animation.dart';
 import 'google_maps_example/googe_map_example.dart';
 import 'multorow/tabpage.dart';
+import 'printing/printing_example.dart';
 import 'sidebars/innerDrawer/innerdrawer.dart';
 import 'sqlite_example/note_list.dart';
 
@@ -144,9 +147,14 @@ class FirstPage extends StatelessWidget {
             onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>RazorPayExample()))
             ),
           RaisedButton(
-              child: Text('Printing example'),
-              onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>RazorPayExample()))
-          ),
+            child: Text('MySQl Example'),
+            onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>MySqlExample()))
+            ),
+          RaisedButton(
+            child: Text('FingerPrint Example'),
+            onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>FingerPrintSignIn()))
+            ),
+         
 
         ],
       )
