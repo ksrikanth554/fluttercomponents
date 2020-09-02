@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttercomponents/animated_List.dart';
 import 'package:fluttercomponents/animations/loginpage_animation.dart';
 import 'package:fluttercomponents/appbars/sliverappbar.dart';
+import 'package:fluttercomponents/custom_circularprogress_bar.dart';
 import 'package:fluttercomponents/dictionaryapp/dictionary.dart';
 import 'package:fluttercomponents/fingerprint/singin_page.dart';
 import 'package:fluttercomponents/itemstack_listview.dart';
@@ -153,6 +154,10 @@ class FirstPage extends StatelessWidget {
           RaisedButton(
             child: Text('FingerPrint Example'),
             onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>FingerPrintSignIn()))
+            ),
+          RaisedButton(
+            child: Text('Custom Circular Example'),
+            onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>Custom_CirccularProgressBar()))
             ),
          
 
